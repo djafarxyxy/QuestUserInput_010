@@ -32,9 +32,9 @@ fun LatihanInput(modifier: Modifier = Modifier){
     var email by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var notelepon by remember { mutableStateOf("") }
-    var gender by remember { mutableStateOf("") }
+    var memilihjk by remember { mutableStateOf("") }
 
-    var dataGender = listOf("laki-laki", "perempuan")
+    val listjk = listOf("laki-laki", "perempuan")
 
     var Namasy by remember { mutableStateOf("") }
     var Emailsy by remember { mutableStateOf("") }
@@ -58,12 +58,12 @@ fun LatihanInput(modifier: Modifier = Modifier){
             modifier = Modifier.fillMaxWidth().padding(5.dp)
         )
         Row (modifier = Modifier.fillMaxWidth()){
-            dataGender.forEach{selectedGender ->
+            listjk.forEach{selectedGender ->
                 Row (
                     verticalAlignment = Alignment.CenterVertically){
                     RadioButton(
-                        selected = gender == selectedGender,
-                        onClick = { gender = selectedGender
+                        selected = memilihjk == selectedGender,
+                        onClick = { memilihjk = selectedGender
                         }
                     )
                     Text(text = selectedGender)
@@ -112,7 +112,7 @@ fun LatihanInput(modifier: Modifier = Modifier){
             Emailsy = email
             Alamatsy = alamat
             Noteleponsy = notelepon
-            Gendersy = gender
+            Gendersy = memilihjk
         }) {
             Text(text = "Simpan")
 
@@ -122,7 +122,7 @@ fun LatihanInput(modifier: Modifier = Modifier){
         DetailMessage(param = "Email",  argum = Emailsy)
         DetailMessage(param = "Alamat",  argum = Alamatsy)
         DetailMessage(param = "No Telepon",  argum = Noteleponsy)
-        DetailMessage(param = "Gender",  argum = Gendersy)
+        DetailMessage(param = "memilihjk",  argum = Gendersy)
     }
 }
 
